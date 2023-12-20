@@ -1,0 +1,146 @@
+/* Start Variables */
+:root {
+    /* Fonts */
+    --f1-font: 'Hanken Grotesk', sans-serif;
+    /* Primary Colors  */
+    --c1-color: hsla(0, 100%, 67%, 1);
+    --c2-color: hsla(39, 100%, 56%, 1);
+    --c3-color: hsla(166, 100%, 37%, 1);
+    --c4-color: hsla(234, 85%, 45%, 1);
+    --c1a-color: hsla(0, 100%, 67%, 0.07);
+    --c2a-color: hsla(39, 100%, 56%, 0.07);
+    --c3a-color: hsla(166, 100%, 37%, 0.07);
+    --c4a-color: hsla(234, 85%, 45%, 0.07);
+    /* Neutral Colors */
+    --c5-color: hsl(221, 100%, 96%);
+    --c6-color: hsl(241, 100%, 89%);
+    --c7-color: hsl(224, 30%, 27%);
+    /* Gradients */
+    --c1-bg: hsl(252, 100%, 67%);
+    --c2-bg: hsl(241, 81%, 54%);
+    --c1-circle: hsla(256, 72%, 46%, 1);
+    --c2-circle: hsla(241, 72%, 46%, 0);
+}
+/* End Variables */
+
+/* Start Global Rules */
+*{margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html{background-color: white;}
+body{
+    font-family: var(--f1-font);
+    min-height: 100vh; display: flex; justify-content: center; align-items: center;
+}
+/* End Global Rules */
+main{box-shadow: 0 0 1.675rem #05050524;  border-radius: 25px;}
+main .container{
+    width: 735px;   margin: 0 auto;
+    display: flex;
+}
+/* result section */
+main .container .result{
+    width: 50%;  padding: 45px 60px;  text-align: center;  border-radius: 25px;
+    background: rgb(120,87,255);
+    background: linear-gradient(180deg, rgba(120,87,255,1) 0%, rgba(46,43,233,0.9472163865546218) 50%);
+}
+main .container .result h3{
+    font-size: 22.5px;  font-weight: 700;  color: hsla(241, 100%, 89%, 0.95);
+    margin-bottom: 35px;
+}
+main .container .result .score{
+    display: flex;  flex-direction: column;  justify-content: center;  align-items: center;  margin: auto;
+    border-radius: 50%;  width: 200px;  height: 200px;
+    background: rgba(78, 33, 202, 0.54);
+    background: linear-gradient(180deg, rgba(78, 33, 202, 0.54) 0%, rgba(36, 33, 202, 0.582) 66%);
+    margin-bottom: 35px;
+}
+main .container .result .score .user-score{
+    font-size: 65px;  font-weight: 800;  color: white;
+}
+main .container .result .score .total-score{
+    font-weight: 700;  font-size: 17px; color: hsla(241, 100%, 89%, 0.57);
+}
+main .container .result .rank{
+    font-size: 30px;  font-weight: 800;  color: white;
+    margin-bottom: 20px;
+}
+main .container .result p{
+    font-size: 17px; color: hsla(222, 100%, 96%, 0.795); padding: 0 5px;  font-weight: 500;
+}
+
+
+/* summary section */
+main .container .summary{
+    width: 50%;  padding: 45px 40px;
+}
+main .container .summary h3{
+    font-size: 22px;  font-weight: 700;  color: var(--c7-color);
+    margin-bottom: 25px;
+}
+main .container .summary > div{
+    display: flex;  justify-content: space-between;
+    padding: 18px;  border-radius: 14px;
+}
+main .container .summary > div:not(.summary-sec4){
+    margin-bottom: 14px;
+}
+main .container .summary .summary-sec1{background-color: var(--c1a-color);}
+main .container .summary .summary-sec2{background-color: var(--c2a-color);}
+main .container .summary .summary-sec3{background-color: var(--c3a-color);}
+main .container .summary .summary-sec4{background-color: var(--c4a-color);  margin-bottom: 42px;}
+
+main .container .summary > div .title{
+    display: flex;  font-size: 17px;
+}
+main .container .summary .summary-sec1 .title h4{color: var(--c1-color);}
+main .container .summary .summary-sec2 .title h4{color: var(--c2-color);}
+main .container .summary .summary-sec3 .title h4{color: var(--c3-color);}
+main .container .summary .summary-sec4 .title h4{color: var(--c4-color);}
+
+main .container .summary > div .title img{
+    margin-right: 10px;
+}
+main .container .summary p{font-weight: 800;  font-size: 17px;}
+main .container .summary p span.user-score{color: hsl(224, 30%, 27%);}
+main .container .summary p span.total-score{color: hsla(224, 30%, 27%, 0.66);}
+main .container .summary button{
+    width: 100%;  border: none;  color: white;  font-size: 16.5px;  font-weight: 700;  background-color: var(--c7-color);
+    padding: 20px 100px;  border-radius: 30px;  cursor: pointer;  transition: all 0.7s;
+}
+main .container .summary button:hover{
+    background: rgb(120,87,255);
+    background: linear-gradient(180deg, rgba(120,87,255,1) 0%, rgba(46,43,233,0.9472163865546218) 50%);
+}
+
+
+/* Media Rules */
+@media screen and (max-width: 735px) {
+    main{border-radius: 0;}
+    main .container{
+        width: 100%;   flex-direction: column;
+    }
+    main .container .result{
+        width: 100%;  border-radius: 0 0 25px 25px;  padding: 25px;
+    }
+    main .container .result h3{
+        margin-bottom: 25px;  font-size: 18px;
+    }
+    main .container .result .score{
+        width: 140px;  height: 140px;
+    }
+    main .container .result .score .user-score{
+        font-size: 55px;
+    }
+    main .container .result .rank{
+        font-size: 25px;
+    }
+    main .container .result p{
+        margin-bottom: 10px;
+    }
+    main .container .summary{
+        width: 100%;  padding: 25px
+    }
+    main .container .summary h3{
+        font-size: 18px;
+    }
+    main .container .summary .summary-sec4{margin-bottom: 28px;}
+}
